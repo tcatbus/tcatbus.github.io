@@ -1,0 +1,69 @@
+a {
+    text-decoration: none;
+}
+
+input:focus {
+    outline: none;
+}
+
+.detail #map {
+  height: 300px;
+  border: 1px solid #ccc;
+}
+
+.btn-default {
+    text-align: center;
+    width: 100%;
+    color: #A2A2A2;
+    background-color: #EFEDEA;
+}
+.area-name {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.back-to-map {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.panel-default>.panel-heading {
+    background-color: #EFEDEA;
+}
+.panel-title {
+    color: #666;
+}
+.schedules .route,
+.schedules .time {
+    width: 50%;
+    text-align: center;
+    display: inline-block;
+}
+.schedules .route {
+    border-right: 1px solid #ccc;
+}
+
+
+.restaurant-list a.restaurant_name {
+    color: #3A7607;
+    text-decoration: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+.restaurant_categories span {
+    margin-right: 3px;
+}
+.restaurant_review::before {
+    content: '"';
+}
+.restaurant_review::after {
+    content: '"';
+}   
+
+
+@media (min-width: 768px) {
+    .area,
+    .bus_schedules,
+    .restaurants {
+        padding: 0;
+    } 
+}
