@@ -56,8 +56,6 @@ voronoiMap = function(map, url, placesData, initialSelections) {
     var cell = d3.select(this),
         point = cell.datum();
 
-    window.sessionStorage.setItem('point', JSON.stringify(point));
-
     lastSelectedPoint = point;
     cell.classed('selected', true);
 
@@ -67,7 +65,6 @@ voronoiMap = function(map, url, placesData, initialSelections) {
         .text(point.name)
         .attr('href', "#/detail/?lat="+point.lat+"&lon="+point.lon+"&name="+point.name+"&area="+point.area+"&id="+point.id);
 
-    console.log(point);
   }
 
   var drawPlacesSelection = function() {
@@ -117,11 +114,11 @@ voronoiMap = function(map, url, placesData, initialSelections) {
 
     labels.append("span")
       .text(function(d) {
-        if (d.includes('foods')) {
+        if (d.indexOf('foods') > -1) {
           return ' food places';
-        } else if (d.includes('drink')) {
+        } else if (d.indexOf('drink') > -1) {
           return ' drink places';
-        } else if (d.includes('campus')) {
+        } else if (d.indexOf('campus') > -1) {
           return ' campus building';
         } else {
           return ' places'
@@ -136,7 +133,6 @@ voronoiMap = function(map, url, placesData, initialSelections) {
     for (var key in places) {
       if (places.hasOwnProperty(key)) {
         if (places[key].state) {
-          console.log(places[key]);
           place = place.concat(places[key].data);
         }
       }
