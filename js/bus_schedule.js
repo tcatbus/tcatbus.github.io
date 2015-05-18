@@ -55,7 +55,7 @@ function handleDOM(mostRecentSchedule) {
     }
     
     // append heads
-    appendSchedules("route", "Scheduled Arrival");
+    appendSchedules("Bus Route", "Scheduled Arrival");
 
     // append schedules
     mostRecentSchedule.forEach(function(d) {
@@ -109,7 +109,7 @@ function getCurrentTime() {
  */
 function getCurrentTimeString() {
     var time = getCurrentTime();
-    var timeStr = time[3] + ":" + (time[4] < 10? "0": "") + time[4] + " " + time[5] + ", " + getWeekday(time[2]) + ", " + getMonthday(time[0]) + " " + time[1];
+    var timeStr = getWeekday(time[2]) + ", " + getMonthday(time[0]) + " " + time[1] + ", " + time[3] + ":" + (time[4] < 10? "0": "") + time[4] + " " + time[5];
     return timeStr;
 }
 function getWeekday(i) {

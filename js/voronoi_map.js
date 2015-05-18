@@ -119,36 +119,8 @@ voronoiMap = function(map, url, placesData, initialSelections) {
     draw();
   }
 
-  //// draw types
-  // var drawPointTypeSelection = function() {
-  //   showHide('#selections');
-  //   var labels = d3.select('#toggles').selectAll('input')
-  //     .data(pointTypes.values())
-  //     .enter().append("label");
-
-  //   labels.append("input")
-  //     .attr('type', 'checkbox')
-  //     .property('checked', function(d) {
-  //       return initialSelections === undefined || initialSelections.has(d.type)
-  //     })
-  //     .attr("value", function(d) { console.log(d);return d.type; })
-  //     .on("change", drawWithLoading);
-
-  //   // labels.append("span")
-  //   //   .attr('class', 'key')
-  //   //   .style('background-color', function(d) { return '#' + d.color; });
-
-  //   // labels.append("span")
-  //   //   .text(function(d) { return d.type; });
-  // }
-
   // draw voronoi of selected types
   var selectedTypes = function() {
-    // return d3.selectAll('#toggles input[type=checkbox]')[0].filter(function(elem) {
-    //   return elem.checked;
-    // }).map(function(elem) {
-    //   return elem.value;
-    // })
     return ["bus stop"];
   }
 
