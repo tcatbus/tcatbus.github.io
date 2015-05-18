@@ -12,27 +12,6 @@ showHide = function(selector) {
   });
 }
 
-// displayLegend = function () {
-//   var circle = [{"x": 30, "y":10, "r": 5, "color": "red"},
-//                 {"x": 80, "y":10, "r": 5, "color": "green"},
-//                 {"x": 130, "y":10, "r": 5, "color": "blue"}];
-
-//   var svg = d3.select("#legend").append('svg')
-//               .attr("width",200)
-//               .attr("height",200);
-
-//   var circles = svg.selectAll("circle")
-//                   .data(circle)
-//                   .enter()
-//                   .append("circle");
-
-//   circles
-//     .attr("cx", function (d) { return d.x; })
-//     .attr("cy", function (d) { return d.y; })
-//     .attr("r", function (d) { return d.r; })
-//     .style("fill", function (d) { return d.color; })
-// }
-
 voronoiMap = function(map, url, placesData, initialSelections) {
   var fillVoronoi;
 
@@ -99,7 +78,7 @@ voronoiMap = function(map, url, placesData, initialSelections) {
     svg.append("text")
         .attr("x", 5)
         .attr("y", 10)
-        .text("Number of buildings")
+        .text("Number of attraction")
         .style("font-weight", "bold");
 
     var labels = d3.select('#square').selectAll('input')
@@ -115,11 +94,11 @@ voronoiMap = function(map, url, placesData, initialSelections) {
     labels.append("span")
       .text(function(d) {
         if (d.indexOf('foods') > -1) {
-          return ' food places';
+          return ' restaurant';
         } else if (d.indexOf('drink') > -1) {
-          return ' drink places';
+          return ' pubs, coffee & tea';
         } else if (d.indexOf('campus') > -1) {
-          return ' campus building';
+          return ' park, library & campus';
         } else {
           return ' places'
         }
@@ -321,14 +300,14 @@ voronoiMap = function(map, url, placesData, initialSelections) {
         .style("fill", fillVoronoi)
         .style("opacity",.2); 
 
-      $(this).attr('value', 'Without buildings');
+      $(this).attr('value', 'Without color');
     } else {
       d3.selectAll("path")
         .style("stroke-width", 1)
         .style("fill","none")
         .style("opacity",1); 
 
-      $(this).attr('value', 'Show buildings');
+      $(this).attr('value', 'Show color');
     }
   
   });
